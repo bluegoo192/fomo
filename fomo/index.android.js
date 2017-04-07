@@ -11,14 +11,11 @@ import {
   Text,
   View
 } from 'react-native';
-import App from './src/app.js';
+import { StackNavigator } from 'react-navigation';
+import Main from './src/main.js';
 
-export default class fomo extends Component {
-  render() {
-    return (
-      <App></App>
-    );
-  }
-}
+const fomo = StackNavigator({
+  Home: { screen:  Main, path: 'main' }
+});
 
 AppRegistry.registerComponent('fomo', () => fomo);

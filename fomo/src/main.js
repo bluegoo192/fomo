@@ -6,27 +6,31 @@ import {
   View
 } from 'react-native';
 
+import { StackNavigator } from 'react-navigation';
+
+import Feed from './components/feed';
+import Tabbar from './components/tabbar';
+
 export default class app extends Component {
+  static navigationOptions = {
+    title: 'Home'
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View>
+        <Tabbar></Tabbar>
+        <Feed></Feed>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  tabbar: {
+    flex: 1,
+    flexDirection: 'row',
+    width: '100%'
+  }, container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
