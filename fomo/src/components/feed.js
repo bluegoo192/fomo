@@ -4,7 +4,10 @@ import { Text, View, StyleSheet } from 'react-native';
 function FeedCard(props) {
   return(
     <View style={styles.card}>
-      <Text>{props.data.title}</Text>
+      <View style={styles.cardHeader}>
+        <Text>{props.data.title}</Text>
+        <Text>{props.data.time}</Text>
+      </View>
     </View>
   );
 }
@@ -13,13 +16,16 @@ export default class Feed extends React.Component {
   getFeed() {
     var stubItems = [
       {
-        "title": "test post 1"
+        "title": "test post 1",
+        "time": "8:03 am"
       },
       {
-        "title": "test post 2"
+        "title": "test post 2",
+        "time": "Yesterday"
       },
       {
-        "title": "test post 3"
+        "title": "test post 3",
+        "time": "3 days ago"
       }
     ];
     return(stubItems);
@@ -29,21 +35,31 @@ export default class Feed extends React.Component {
        this.getFeed().forEach(function(i, index) {
          items.push(<FeedCard data={i} key={index} />);
        });
-        return(
-          <View style={styles.container}>
-            {items}
-          </View>
-        );
+      return(
+        <View style={styles.container}>
+          {items}
+        </View>
+      );
     }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 6
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   card: {
-    backgroundColor: '#ccc'
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    borderColor: '#dddddf',
+    borderWidth: 1,
+    marginTop: 8,
+    padding: 6
   }
 
 });

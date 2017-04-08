@@ -13,7 +13,7 @@ export default class Tabbar extends React.Component {
     render() {
         return(
           <View style={styles.tabbar}>
-            <Tab name="Nearby" handlePress={() => this.props.changeView("feed")}/>
+            <Tab name="Feed" handlePress={() => this.props.changeView("feed")}/>
             <Tab name="Nearby" handlePress={() => this.props.changeView("nearby")}/>
             <Tab name="Friends" handlePress={() => this.props.changeView("feed")}/>
             <Tab name="My Events" handlePress={() => this.props.changeView("feed")}/>
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
   tabbar: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderColor: '#000'
+    borderColor: '#ccc',
+    backgroundColor: '#fefeff'
   },
   tab: {
     flex: 1,
