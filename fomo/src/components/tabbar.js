@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 function Tab(props) {
   return(
-    <View style={styles.tab}>
+    <TouchableOpacity style={styles.tab} onPress={() => {return}}>
       <Text style={{textAlign: 'center'}}>{props.name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
