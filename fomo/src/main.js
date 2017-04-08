@@ -9,6 +9,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 import Feed from './components/feed';
+import Nearby from './components/nearby';
 import Tabbar from './components/tabbar';
 
 export default class app extends Component {
@@ -18,14 +19,25 @@ export default class app extends Component {
   constructor() {
     super();
     this.state = {
-      current: "feed",
+      current: "feed"
     };
   }
   render() {
+    var current;
+    switch(this.state.current) {
+      case "feed":
+        current = <Feed></Feed>
+        break;
+      case "nearby":
+        current = <Nearby></Nearby>
+        break;
+      default:
+        current = <Feed></Feed>
+    }
     return (
       <View style={styles.container}>
         <Tabbar></Tabbar>
-        <Feed></Feed>
+        {current}
       </View>
     );
   }
