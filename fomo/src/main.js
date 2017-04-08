@@ -19,8 +19,12 @@ export default class app extends Component {
   constructor() {
     super();
     this.state = {
-      current: "feed"
+      current: "feed",
+      test: 1
     };
+  }
+  changeView(view) {
+    this.setState({ current: view });
   }
   render() {
     var current;
@@ -36,7 +40,7 @@ export default class app extends Component {
     }
     return (
       <View style={styles.container}>
-        <Tabbar></Tabbar>
+        <Tabbar changeView={(v) => this.changeView(v)}></Tabbar>
         {current}
       </View>
     );

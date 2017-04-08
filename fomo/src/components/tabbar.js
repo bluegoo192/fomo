@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 function Tab(props) {
   return(
-    <TouchableOpacity style={styles.tab} onPress={() => {return}}>
+    <TouchableOpacity style={styles.tab} onPress={() => props.handlePress()}>
       <Text style={{textAlign: 'center'}}>{props.name}</Text>
     </TouchableOpacity>
   );
@@ -13,10 +13,10 @@ export default class Tabbar extends React.Component {
     render() {
         return(
           <View style={styles.tabbar}>
-            <Tab name="Feed" />
-            <Tab name="Nearby" />
-            <Tab name="Friends" />
-            <Tab name="My Events" />
+            <Tab name="Nearby" handlePress={() => this.props.changeView("feed")}/>
+            <Tab name="Nearby" handlePress={() => this.props.changeView("nearby")}/>
+            <Tab name="Friends" handlePress={() => this.props.changeView("feed")}/>
+            <Tab name="My Events" handlePress={() => this.props.changeView("feed")}/>
           </View>
         );
     }
