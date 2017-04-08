@@ -43,7 +43,7 @@ export default class app extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Tabbar changeView={(v) => this.changeView(v)}></Tabbar>
+        <Tabbar current={this.state.current} changeView={(v) => this.changeView(v)}></Tabbar>
         {this.getView()}
       </View>
     );
