@@ -26,7 +26,7 @@ export default class app extends Component {
   changeView(view) {
     this.setState({ current: view });
   }
-  render() {
+  getView() {
     var current;
     switch(this.state.current) {
       case "feed":
@@ -38,10 +38,13 @@ export default class app extends Component {
       default:
         current = <Feed></Feed>
     }
+    return current;
+  }
+  render() {
     return (
       <View style={styles.container}>
         <Tabbar changeView={(v) => this.changeView(v)}></Tabbar>
-        {current}
+        {this.getView()}
       </View>
     );
   }
