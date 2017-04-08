@@ -15,9 +15,15 @@ export default class app extends Component {
   static navigationOptions = {
     title: 'Home'
   }
+  constructor() {
+    super();
+    this.state = {
+      current: "feed",
+    };
+  }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Tabbar></Tabbar>
         <Feed></Feed>
       </View>
@@ -32,9 +38,7 @@ const styles = StyleSheet.create({
     width: '100%'
   }, container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+
   },
   welcome: {
     fontSize: 20,
