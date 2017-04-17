@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
 
 function FeedCard(props) {
   return(
@@ -8,6 +8,11 @@ function FeedCard(props) {
         <Text>{props.data.title}</Text>
         <Text>{props.data.time}</Text>
       </View>
+      <Image
+        style={{alignSelf: 'stretch', height: 160}}
+        resizeMode="cover"
+        source={{uri: props.data.uri}}
+      />
     </View>
   );
 }
@@ -17,15 +22,18 @@ export default class Feed extends React.Component {
     var stubItems = [
       {
         "title": "test post 1",
-        "time": "8:03 am"
+        "time": "8:03 am",
+        "uri": "https://myibiza.tv/wp-content/uploads/sites/12/2016/12/ushuaia_closing_party_ibiza_2016_featured.jpg"
       },
       {
         "title": "test post 2",
-        "time": "Yesterday"
+        "time": "Yesterday",
+        "uri": "http://weknowyourdreams.com/images/party/party-08.jpg"
       },
       {
         "title": "test post 3",
-        "time": "3 days ago"
+        "time": "3 days ago",
+        "uri": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG"
       }
     ];
     return(stubItems);
