@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
+import { Text, View, StyleSheet, Image, FlatList, ScrollView } from 'react-native';
 
 //const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
@@ -36,6 +36,11 @@ export default class Feed extends React.Component {
         "title": "test post 3",
         "time": "3 days ago",
         "uri": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG"
+      },
+      {
+        "title": "test post 4",
+        "time": "3 days ago",
+        "uri": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG"
       }
     ];
     return(stubItems);
@@ -43,12 +48,12 @@ export default class Feed extends React.Component {
     render() {
        var items = [];
        this.getFeed().forEach(function(i, index) {
-         items.push(<FeedCard data={i} key={index} />);
+         items.push(<FeedCard data={i} key={index} style={styles.child}/>);
        });
       return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
           {items}
-        </View>
+        </ScrollView>
       );
     }
 }
@@ -56,8 +61,13 @@ export default class Feed extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     padding: 6
+  },
+  content: {
+    alignItems: 'center'
+  },
+  child: {
+    alignItems: 'center'
   },
   cardHeader: {
     flexDirection: 'row',
