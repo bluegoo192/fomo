@@ -11,6 +11,7 @@ import { StackNavigator } from 'react-navigation';
 import Feed from './components/feed';
 import Nearby from './components/nearby';
 import Tabbar from './components/tabbar';
+import Mine from './components/mine';
 
 export default class app extends Component {
   static navigationOptions = {
@@ -34,6 +35,9 @@ export default class app extends Component {
         break;
       case "nearby":
         current = <Nearby></Nearby>
+        break;
+      case "mine":
+        current = <Mine></Mine>
         break;
       default:
         current = <Feed></Feed>
