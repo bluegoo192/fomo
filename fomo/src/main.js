@@ -31,7 +31,7 @@ export default class app extends Component {
     var current;
     switch(this.state.current) {
       case "feed":
-        current = <Feed></Feed>
+        current = <Feed navigation={this.props.navigation}></Feed>
         break;
       case "nearby":
         current = <Nearby></Nearby>
