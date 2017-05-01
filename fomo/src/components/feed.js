@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, FlatList } from 'react-native';
 
-const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
+//const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
 function FeedCard(props) {
   return(
