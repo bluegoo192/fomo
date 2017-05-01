@@ -12,6 +12,7 @@ import Feed from './components/feed';
 import Nearby from './components/nearby';
 import Tabbar from './components/tabbar';
 import Mine from './components/mine';
+import Friends from './components/friends';
 
 export default class app extends Component {
   static navigationOptions = {
@@ -37,7 +38,7 @@ export default class app extends Component {
         current = <Nearby></Nearby>
         break;
       case "mine":
-        current = <Mine></Mine>
+        current = <Mine navigation={this.props.navigation}></Mine>
         break;
       default:
         current = <Feed></Feed>

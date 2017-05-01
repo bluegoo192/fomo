@@ -14,7 +14,7 @@ export default class Event extends Component {
   }
   render() {
     return (
-      <Text>Event</Text>
+      <Text>Viewing detailed data for event with _id: {this.props.navigation.state.params.event}</Text>
     );
   }
 }

@@ -7,7 +7,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity, ScrollView } from 'rea
 function FeedCard(props) {
   return(
     <View style={styles.card}>
-      <TouchableOpacity onPress={() => props.navigation.navigate('Event', {event: props.data.name})}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Event', {event: props.data._id})}>
         <View style={styles.cardHeader, styles.padded}>
           <Text style={styles.title}>{props.data.name}</Text>
           <Text>{props.data.start}</Text>

@@ -14,6 +14,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import Main from './src/main.js';
 import Event from './src/event.js';
+import NewEvent from './src/newevent.js';
 
 const fomo = StackNavigator({
   Home: { screen:  Main, path: 'main' },
@@ -21,6 +22,10 @@ const fomo = StackNavigator({
     path: 'events/:event',
     screen: Event,
   },
+  NewEvent: {
+    path: 'events/new',
+    screen: NewEvent,
+  }
 });
 
 AppRegistry.registerComponent('fomo', () => fomo);
