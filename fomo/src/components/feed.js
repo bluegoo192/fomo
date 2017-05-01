@@ -7,14 +7,18 @@ function FeedCard(props) {
   return(
     <View style={styles.card}>
       <View style={styles.cardHeader}>
-        <Text>{props.data.title}</Text>
-        <Text>{props.data.time}</Text>
+        <Text>{props.data.name}</Text>
+        <Text>{props.data.start}</Text>
       </View>
       <Image
         style={{alignSelf: 'stretch', height: 160}}
         resizeMode="cover"
-        source={{uri: props.data.uri}}
+        source={{uri: props.data.image_url}}
       />
+      <Text>{props.data.description}</Text>
+      <View>
+        <Text>Created by {props.data.creator} on {props.data.creation_date}</Text>
+      </View>
     </View>
   );
 }
@@ -23,24 +27,20 @@ export default class Feed extends React.Component {
   getFeed() {
     var stubItems = [
       {
-        "title": "test post 1",
-        "time": "8:03 am",
-        "uri": "https://myibiza.tv/wp-content/uploads/sites/12/2016/12/ushuaia_closing_party_ibiza_2016_featured.jpg"
-      },
-      {
-        "title": "test post 2",
-        "time": "Yesterday",
-        "uri": "http://weknowyourdreams.com/images/party/party-08.jpg"
-      },
-      {
-        "title": "test post 3",
-        "time": "3 days ago",
-        "uri": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG"
-      },
-      {
-        "title": "test post 4",
-        "time": "3 days ago",
-        "uri": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG"
+        "_id": "590681476fe5d832abbf9807",
+        "modification_date": "2017-05-01T00:28:55.901Z",
+        "creation_date": "2017-05-01T00:28:55.896Z",
+        "creator": "ghost",
+        "name": "full test event",
+        "start": "1970-01-01T03:43:54.324Z",
+        "end": "1970-01-01T04:10:39.039Z",
+        "publicity": "PUBLIC",
+        "image_url": "http://www.bizbash.com/content/editorial/storyimg/big/sjp_4063.JPG",
+        "description": "a test event",
+        "__v": 0,
+        "posts": [],
+        "invitees": [],
+        "admins": []
       }
     ];
     return(stubItems);
