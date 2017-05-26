@@ -40,6 +40,9 @@ export default class app extends Component {
       case "mine":
         current = <Mine navigation={this.props.navigation}></Mine>
         break;
+      case "friends":
+        current = <Friends navigation={this.props.navigation}></Friends>
+        break;
       default:
         current = <Feed></Feed>
     }

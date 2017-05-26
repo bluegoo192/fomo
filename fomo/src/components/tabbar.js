@@ -21,7 +21,7 @@ export default class Tabbar extends React.Component {
           <View style={styles.tabbar}>
             <Tab name="Feed" current={this.props.current} handlePress={() => this.props.changeView("feed")}/>
             <Tab name="Nearby" current={this.props.current} handlePress={() => this.props.changeView("nearby")}/>
-            <Tab name="Friends" current={this.props.current} handlePress={() => this.props.changeView("feed")}/>
+            <Tab name="Friends" current={this.props.current} handlePress={() => this.props.changeView("friends")}/>
             <Tab name="My Events" current={this.props.current} handlePress={() => this.props.changeView("mine")}/>
           </View>
         );
