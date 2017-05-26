@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Button, View } from 'react-native';
+import Search from 'react-native-search-box';
 
 import { StackNavigator } from 'react-navigation';
 
@@ -7,17 +8,69 @@ export default class AddFriend extends React.Component {
     static navigationOptions = {
       title: 'Add Friends'
     };
+    beforeFocus = () => {
+        return new Promise((resolve, reject) => {
+            console.log('beforeFocus');
+            resolve();
+        });
+    }
+
+    onFocus = (text) => {
+        return new Promise((resolve, reject) => {
+            console.log('onFocus', text);
+            resolve();
+        });
+    }
+
+    afterFocus = () => {
+        return new Promise((resolve, reject) => {
+            console.log('afterFocus');
+            resolve();
+        });
+    }
+
+    onCancel = () => {
+        return new Promise((resolve, reject) => {
+            console.log('onCancel');
+            resolve();
+        });
+    }
+
+    afterDelete = () => {
+        return new Promise((resolve, reject) => {
+            console.log('afterDelete => toggle keyboard');
+            this.refs.search_bar.focus();
+            resolve();
+        });
+    }
+
+    onSearch = (text) => {
+        return new Promise((resolve, reject) => {
+            console.log('onSearch', text);
+            resolve();
+        });
+    }
+
+    onChangeText = (text) => {
+        return new Promise((resolve, reject) => {
+            console.log('onChangeText', text);
+            resolve();
+        });
+    }
     render() {
         return(
-          <View style={{padding: 16}}>
-            <Text>You have no friends</Text>
-            <View style={{marginTop: 16}}>
-              <Button
-                onPress={() => this.props.navigation.navigate('NewEvent')}
-                title="Add friend" color="#1B2AC4"
-                accessibilityLabel="Add a friend"
-              />
-            </View>
+          <View>
+            <Search
+              ref="search_box"
+              onSearch={this.onSearch}
+              onChangeText={this.onChangeText}
+              onDelete={() => console.log('onDelete')}
+              afterDelete={this.afterDelete}
+              beforeFocus={this.beforeFocus}
+              onFocus={this.onFocus}
+              afterFocus={this.afterFocus}
+              onCancel={this.onCancel}
+            />
           </View>
         );
     }
