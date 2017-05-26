@@ -11,9 +11,9 @@ export default class Friends extends React.Component {
             <Text>You have no friends</Text>
             <View style={{marginTop: 16}}>
               <Button
-                onPress={() => this.props.navigation.navigate('NewEvent')}
+                onPress={() => this.props.navigation.navigate('AddFriend')}
                 title="Add friend" color="#1B2AC4"
-                accessibilityLabel="Learn more about this purple button"
+                accessibilityLabel="Add a friend"
               />
             </View>
           </View>
