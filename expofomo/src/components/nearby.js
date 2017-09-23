@@ -17,18 +17,39 @@ const styles = StyleSheet.create({
 export default class Nearby extends React.Component {
     static navigationOptions = {
       title: 'Nearby'
-    };
+    }
+    constructor() {
+      super();
+      this.state = {
+        markers: [
+          {
+            key: "000",
+            latlng: {
+              latitude: 34.413544,
+              longitude: -119.856539,
+            }
+          }
+        ]
+      }
+    }
     render() {
         return(
           <View style ={styles.container}>
             <MapView style={styles.map}
               initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
+                latitude: 34.413544,
+                longitude: -119.856539,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
-              }}
-            />
+              }}>
+                {this.state.markers.map(marker => (
+                  <MapView.Marker
+                    coordinate={marker.latlng}
+                    title={marker.title}
+                    description={marker.description}
+                  />
+                ))}
+              </MapView>
           </View>
         );
     }
