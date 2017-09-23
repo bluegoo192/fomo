@@ -39,6 +39,10 @@ export default class app extends Component {
           "__v": 0,
           "posts": [],
           "invitees": [],
+          "latlng": {
+            "latitude": 34.413331,
+            "longitude": -119.859929,
+          },
           "admins": []
         },
         {
@@ -55,6 +59,10 @@ export default class app extends Component {
           "__v": 0,
           "posts": [],
           "invitees": [],
+          "latlng": {
+            "latitude": 34.413544,
+            "longitude": -119.856539,
+          },
           "admins": []
         },
         {
@@ -70,6 +78,10 @@ export default class app extends Component {
           "description": "This is a longer event description.   title and body text will inherit the fontFamily from styles.baseText, but the title provides its own additional styles. The title and body will stack on top of each other on account of the literal newl",
           "__v": 0,
           "posts": [],
+          "latlng": {
+            "latitude": 34.410003,
+            "longitude": -119.865337,
+          },
           "invitees": [],
           "admins": []
         }

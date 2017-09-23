@@ -18,21 +18,6 @@ export default class Nearby extends React.Component {
     static navigationOptions = {
       title: 'Nearby'
     }
-    constructor() {
-      super();
-      this.state = {
-        markers: [
-          {
-            title: "test",
-            description: "a test",
-            latlng: {
-              latitude: 34.413544,
-              longitude: -119.856539,
-            }
-          }
-        ]
-      }
-    }
     render() {
         return(
           <View style ={styles.container}>
@@ -43,11 +28,11 @@ export default class Nearby extends React.Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}>
-                {this.state.markers.map((marker, i) => (
+                {this.props.events.map((marker, i) => (
                   <MapView.Marker
                     key={i}
                     coordinate={marker.latlng}
-                    title={marker.title}
+                    title={marker.name}
                     description={marker.description}
                   />
                 ))}
