@@ -30,7 +30,7 @@ export default fomo = StackNavigator({
   AddFriend: {
     path: 'friends/add',
     screen: AddFriend,
-  },
+  }
 });
 
 AppRegistry.registerComponent('fomo', () => fomo);

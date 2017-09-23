@@ -16,7 +16,8 @@ import Friends from './components/friends';
 
 export default class app extends Component {
   static navigationOptions = {
-    title: 'Home'
+    title: 'Home',
+    headerStyle: { marginTop: Expo.Constants.statusBarHeight }
   }
   constructor() {
     super();
