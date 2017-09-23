@@ -23,6 +23,8 @@ export default class Nearby extends React.Component {
       this.state = {
         markers: [
           {
+            title: "test",
+            description: "a test",
             latlng: {
               latitude: 34.413544,
               longitude: -119.856539,
