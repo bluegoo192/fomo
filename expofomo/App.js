@@ -17,7 +17,7 @@ import Event from './src/event.js';
 import NewEvent from './src/newevent.js';
 import AddFriend from './src/addfriend.js';
 
-const fomo = StackNavigator({
+export default fomo = StackNavigator({
   Home: { screen:  Main, path: 'main' },
   Event: {
     path: 'events/:event',
