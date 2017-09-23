@@ -5,8 +5,7 @@ import MapView from 'react-native-maps';
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
+    top: 45,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },

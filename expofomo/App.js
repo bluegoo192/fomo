@@ -1,3 +1,9 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -5,24 +11,26 @@ import {
   Text,
   View
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import Main from './src/main.js';
+import Event from './src/event.js';
+import NewEvent from './src/newevent.js';
+import AddFriend from './src/addfriend.js';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const fomo = StackNavigator({
+  Home: { screen:  Main, path: 'main' },
+  Event: {
+    path: 'events/:event',
+    screen: Event,
+  },
+  NewEvent: {
+    path: 'events/new',
+    screen: NewEvent,
+  },
+  AddFriend: {
+    path: 'friends/add',
+    screen: AddFriend,
   },
 });
+
+AppRegistry.registerComponent('fomo', () => fomo);
