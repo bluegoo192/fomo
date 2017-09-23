@@ -5,8 +5,7 @@ import MapView from 'react-native-maps';
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
+    top: 45,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
@@ -21,15 +20,15 @@ export default class Nearby extends React.Component {
     };
     render() {
         return(
-          <View style ={styles.container}>
-            <MapView style={styles.map}
-              initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}
-            />
+          <View style={styles.container}>
+              <MapView style={styles.map}
+                initialRegion={{
+                  latitude: 37.78825,
+                  longitude: -122.4324,
+                  latitudeDelta: 0.0922,
+                  longitudeDelta: 0.0421,
+                }}
+              />
           </View>
         );
     }
