@@ -23,7 +23,6 @@ export default class Nearby extends React.Component {
       this.state = {
         markers: [
           {
-            key: "000",
             latlng: {
               latitude: 34.413544,
               longitude: -119.856539,
@@ -42,8 +41,9 @@ export default class Nearby extends React.Component {
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
               }}>
-                {this.state.markers.map(marker => (
+                {this.state.markers.map((marker, i) => (
                   <MapView.Marker
+                    key={i}
                     coordinate={marker.latlng}
                     title={marker.title}
                     description={marker.description}
